@@ -131,69 +131,188 @@ body {
 
 /* Hero Section */
 .hero {
+    position: relative;
     height: 100vh;
-    background: var(--bg-secondary);
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    overflow: hidden;
     padding: 0 1rem;
+    margin-top: 60px; /* Adjust based on your navbar height */
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23DC143C" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(220, 20, 60, 0.1) 0%,
+        rgba(26, 35, 126, 0.1) 100%
+    );
+    z-index: 2;
 }
 
 .hero-content {
+    position: relative;
+    z-index: 3;
     max-width: 800px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .hero h1 {
     font-size: 4rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, 
-        var(--primary-color), 
-        var(--secondary-color));
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+    animation: fadeInUp 1s ease;
 }
 
 .hero p {
     font-size: 1.25rem;
-    color: #4b5563;
+    color: var(--text-primary);
     margin-bottom: 2rem;
+    animation: fadeInUp 1s ease 0.2s backwards;
 }
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
     justify-content: center;
+    animation: fadeInUp 1s ease 0.4s backwards;
 }
 
 .cta-button, .demo-button {
     padding: 1rem 2rem;
-    border-radius: var(--border-radius);
+    border-radius: 50px;
     font-weight: 500;
     text-decoration: none;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .cta-button {
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     color: white;
     border: none;
-}
-
-.cta-button:hover {
-    background-color: var(--primary-light);
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
 }
 
 .demo-button {
-    background-color: white;
-    color: var(--secondary-color);
-    border: 2px solid var(--secondary-color);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border: 2px solid var(--primary-color);
+    backdrop-filter: blur(5px);
 }
 
-.demo-button:hover {
-    background-color: var(--secondary-color);
-    color: white;
+.cta-button:hover, .demo-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Floating animation for hero content */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .hero-content {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .demo-button {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .hero-content {
+        padding: 1.5rem;
+    }
+}
+
+/* Additional animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: Add animated particles */
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.particle {
+    position: absolute;
+    background: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: particleFloat 15s infinite linear;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+    }
 }
 
 /* Features Section */
