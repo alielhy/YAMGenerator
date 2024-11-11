@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAMGenerator - Parameters</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="parameters.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-wrapper">
+                <span class="logo-yam">YAM</span>
+                <span class="logo-generator">Generator</span>
+                <div class="logo-animation">
+                    <i class="fas fa-bolt"></i>
+                </div>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><button id="darkModeToggle" class="dark-mode-toggle">
+                <i class="fas fa-moon moon-icon"></i>
+                <i class="fas fa-sun sun-icon"></i>
+            </button></li>
+        </ul>
+    </nav>
+
+    <!-- Rest of your parameters content -->
+    <div class="parameters-container">
+        <h1>Website Configuration</h1>
+        
+        <div class="parameters-grid">
+            <!-- Branding Section -->
+            <div class="parameter-section">
+                <h2>Branding</h2>
+                
+                <div class="parameter-card">
+                    <div class="input-group">
+                        <label>Website Name</label>
+                        <input type="text" placeholder="Enter your website name">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Tagline</label>
+                        <input type="text" placeholder="Enter a catchy tagline">
+                    </div>
+                    
+                    <div class="logo-upload">
+                        <label>Logo</label>
+                        <div class="upload-area" id="logoPreview">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drop your logo here or <span>browse</span></p>
+                            <p class="file-info">SVG, PNG, JPG (max. 800x400px)</p>
+                        </div>
+                        <input type="file" id="logoInput" accept="image/*" hidden>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Favicon</label>
+                        <div class="upload-area" id="faviconPreview">
+                            <i class="fas fa-image"></i>
+                            <p>Upload favicon <span>browse</span></p>
+                        </div>
+                        <input type="file" id="faviconInput" accept="image/*" hidden>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Colors Section -->
+            <div class="parameter-section">
+                <h2>Theme Colors</h2>
+                
+                <div class="parameter-card">
+                    <div class="color-pickers">
+                        <div class="color-item">
+                            <label>Primary Color</label>
+                            <div class="color-input">
+                                <input type="color" id="primaryColor" value="#DC143C">
+                                <span class="color-value">#DC143C</span>
+                            </div>
+                        </div>
+                        
+                        <div class="color-item">
+                            <label>Secondary Color</label>
+                            <div class="color-input">
+                                <input type="color" id="secondaryColor" value="#ff4d6d">
+                                <span class="color-value">#ff4d6d</span>
+                            </div>
+                        </div>
+                        
+                        <div class="color-item">
+                            <label>Accent Color</label>
+                            <div class="color-input">
+                                <input type="color" id="accentColor" value="#2a2a2a">
+                                <span class="color-value">#2a2a2a</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layout Section -->
+            <div class="parameter-section">
+                <h2>Layout & Navigation</h2>
+                <div class="parameter-card">
+                    <div class="input-group">
+                        <label>Navigation Style</label>
+                        <select>
+                            <option value="top">Top Navigation</option>
+                            <option value="sidebar">Sidebar Navigation</option>
+                            <option value="hamburger">Hamburger Menu</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Layout Width</label>
+                        <select>
+                            <option value="wide">Wide (1400px)</option>
+                            <option value="normal">Normal (1200px)</option>
+                            <option value="narrow">Narrow (1000px)</option>
+                        </select>
+                    </div>
+                    <div class="toggle-group">
+                        <label>Sticky Header</label>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typography Section -->
+            <div class="parameter-section">
+                <h2>Typography</h2>
+                <div class="parameter-card">
+                    <div class="input-group">
+                        <label>Heading Font</label>
+                        <select>
+                            <option>Roboto</option>
+                            <option>Montserrat</option>
+                            <option>Poppins</option>
+                            <option>Inter</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Body Font</label>
+                        <select>
+                            <option>Open Sans</option>
+                            <option>Roboto</option>
+                            <option>Lato</option>
+                            <option>Nunito</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Base Font Size</label>
+                        <select>
+                            <option>14px</option>
+                            <option>16px</option>
+                            <option>18px</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="parameter-section">
+                <h2>Features</h2>
+                <div class="parameter-card">
+                    <div class="toggle-group">
+                        <label>Dark Mode Support</label>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="toggle-group">
+                        <label>Animations</label>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="toggle-group">
+                        <label>Social Media Links</label>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="toggle-group">
+                        <label>Newsletter Signup</label>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preview Section -->
+        <div class="preview-section">
+            <h2>Live Preview</h2>
+            <div class="preview-container" id="previewContainer">
+                <div class="preview-header">
+                    <div class="preview-logo"></div>
+                    <div class="preview-nav"></div>
+                </div>
+                <div class="preview-content"></div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="generate-button">Generate Website</button>
+            <button class="save-button">Save Changes</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="yam">YAM</span>
+                <span class="generator">Generator</span>
+                <i class="fas fa-bolt"></i>
+            </div>
+            <p>&copy; 2024 YAM Generator. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Check saved theme preference
+        document.addEventListener('DOMContentLoaded', () => {
+            const darkMode = localStorage.getItem('darkMode');
+            if (darkMode === 'enabled') {
+                document.body.setAttribute('data-theme', 'dark');
+            }
+        });
+
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            if (document.body.getAttribute('data-theme') === 'dark') {
+                document.body.removeAttribute('data-theme');
+                localStorage.setItem('darkMode', 'disabled');
+            } else {
+                document.body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('darkMode', 'enabled');
+            }
+        });
+    </script>
+</body>
+</html>
