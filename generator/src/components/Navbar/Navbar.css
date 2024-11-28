@@ -1,0 +1,117 @@
+/* Navbar.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar.dark {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logo-text {
+  color: #ff0044;
+}
+
+.logo-text.animated {
+  display: inline-block;
+  animation: colorChange 2s infinite;
+}
+
+@keyframes colorChange {
+  0% {
+    color: #ff0044;
+    transform: scale(1);
+  }
+  50% {
+    color: #ff6699;
+    transform: scale(1.1);
+  }
+  100% {
+    color: #ff0044;
+    transform: scale(1);
+  }
+}
+
+.lightning-icon {
+  margin-left: 5px;
+  color: #ff0044;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.login-btn,
+.signup-btn {
+  padding: 5px 15px;
+  border-radius: 20px;
+  border: 2px solid #ff0044;
+  background-color: transparent;
+  color: #ff0044;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.signup-btn {
+  background-color: #ff0044;
+  color: #ffffff;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+  background-color: #ff3366;
+  color: #ffffff;
+}
+
+.theme-toggle {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
