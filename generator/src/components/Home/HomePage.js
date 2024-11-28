@@ -1,11 +1,9 @@
 import React from 'react';
+import HeroSection from '../HeroSection/HeroSection';
 
 function HomePage() {
   return (
-    <div>
-      <h1>Welcome to the Website Generator</h1>
-      <p>Create your own website easily!</p>
-    </div>
+    <HeroSection />
   );
 }
 

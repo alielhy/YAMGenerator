@@ -1,48 +1,28 @@
 // Navbar.js
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './Navbar.css'; // Ensure you have this CSS file
+import './Navbar.css';
 
 function Navbar() {
-  const navigate = useNavigate();
-  const [darkMode, setDarkMode] = useState(false);
-
-  const handleNavigation = (path) => {
-    navigate(path);
-  };
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle('dark-mode');
+    setIsDarkMode(!isDarkMode);
   };
 
   return (
-    <nav className={`navbar ${darkMode ? 'dark' : ''}`}>
-      <div className="logo" onClick={() => navigate('/')}>
-        <span className="logo-text animated">YAM</span> Generator
-        <span className="lightning-icon">⚡</span>
-      </div>
+    <nav className={`navbar ${isDarkMode ? 'dark-mode' : ''}`}>
+      <div className="logo">YAM<span className="gradient">Generator</span></div>
       <ul className="nav-links">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/services">Services</Link>
-        </li>
-        <li>
-          <Link to="/how-it-works">How It Works</Link>
-        </li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
       </ul>
-      <div className="auth-buttons">
-        <button className="login-btn" onClick={() => handleNavigation('/register')}>
-          Login
-        </button>
-        <button className="signup-btn" onClick={() => handleNavigation('/register')}>
-          Sign Up
-        </button>
-      </div>
-      <div className="theme-toggle" onClick={toggleDarkMode}>
-        {darkMode ? '☀️' : '🌙'}
+      <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+        {isDarkMode ? '☀️' : '🌙'}
+      </button>
+      <div>
+        <button className="nav-button">Login</button>
+        <button className="nav-button signup-button">Sign Up</button>
       </div>
     </nav>
   );
