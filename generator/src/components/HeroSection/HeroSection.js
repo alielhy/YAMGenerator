@@ -16,7 +16,7 @@ function HeroSection() {
         <p className="hero-subtitle">
           One platform, endless possibilities. Create unique content, and designs instantly.
         </p>
-        <Link to="/parameter-selection">
+        <Link to="/webgenerator">
         <button className="cta-button">Get Started Free</button>
         </Link>
       </div>
