@@ -1,0 +1,14 @@
+.button {
+    flex: 1;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 12px;
+  }
+  
+  .generate-button {
+    background: #e5989b;
+  }

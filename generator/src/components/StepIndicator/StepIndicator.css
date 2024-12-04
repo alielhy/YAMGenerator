@@ -1,0 +1,32 @@
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 50%;
+  background-color: #e5989b; /* Primary color */
+  color: white;
+  font-weight: bold;
+}
+
+.step-label {
+  display: block;
+  margin-top: 5px;
+  color: #6d6875; /* Darker text color */
+}
+
+.step.active .step-number {
+  background-color: #b5838d; /* Active step color */
+}
